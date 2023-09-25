@@ -1,13 +1,30 @@
 <script>
+import AppFooter from "@/components/AppFooter.vue";
+import AppHeader from "@/components/AppHeader.vue";
 export default {
-}
- </script>
+    components: {
+        AppHeader,
+        AppFooter,
+    },
+
+
+
+};
+</script>
+
+
 <template>
-<h1>Hello, Vue.js!</h1>
+    <div class="app">
+        <AppHeader />
+        <div class="container mt-3">
+            <router-view />
+        </div>
+        <AppFooter />
+    </div>
 </template>
 <style>
 .page {
-max-width: 400px;
-margin: auto;
+      max-width: 400px;
+      margin: auto;
 }
- </style>
+</style>
