@@ -22,7 +22,8 @@
         </div>
 
     </nav>
-    <nav class="navbar navi">
+    <div>
+        <nav class="navbar navi">
         <div class="nav-item" style="margin-right: 16px; color: white;margin-left: auto;">
             <router-link :to="{ name: 'hienmau' }" class="nav-link" style="color: #ffffff;">
 
@@ -34,8 +35,11 @@
         <div class="nav-item" style="margin-right: 16px; color: white; ">Hỏi Đáp</div>
         <div :class="'nav-item'" style="color: white;margin-right: auto;">Tin Tức</div>
     </nav>
+
+    </div>
+ 
 </template>
-<style>
+<style scoped>
 /* CSS để bo tròn ảnh và thu nhỏ nó */
 .navbar {
     display: flex;

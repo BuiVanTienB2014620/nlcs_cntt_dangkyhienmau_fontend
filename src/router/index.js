@@ -1,5 +1,4 @@
-import Login from "@/views/Login.vue";
-import Register from "@/views/Register.vue";
+
 import Trangchu from "@/views/Trangchu.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -10,15 +9,15 @@ const routes = [
         component: Trangchu,
     },
     {
-        path: "/",
+        path: "/login",
         name: "login",
-        component: Login,
+        component:()=> import("@/views/Login.vue"),
 
     },
     {
-        path: "/",
+        path: "/users",
         name: "register",
-        component: Register,
+        component: () => import("@/views/Register.vue"),
 
     },
     {
@@ -27,15 +26,11 @@ const routes = [
         component: () => import("@/views/NotFound.vue"),
     },
     {
-        path: "/donors/:id",
-        name: "donor.edit",
-        component: () => import("@/views/ContactEdit.Vue"),
-        props: true // Truyền các biến trong $route.params vào làm props
-    },{
-        path: "/contacts",
-        name: "contact.add",
-        component: () => import("@/views/ContactNew.vue")
-    }
+        path: "/:events",
+        name: "event",
+        component: () => import("@/views/Event.vue"),
+    },
+    
     
 ];
 

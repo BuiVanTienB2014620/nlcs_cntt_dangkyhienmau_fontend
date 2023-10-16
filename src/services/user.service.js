@@ -7,7 +7,7 @@ class UserService{
     async getAll(){
         return (await this.api.get("/")).data;
     }
-    async create(data){
+    async createUser(data){
         return (await this.api.post("/", data)).data;
     }
     async deleteAll(){

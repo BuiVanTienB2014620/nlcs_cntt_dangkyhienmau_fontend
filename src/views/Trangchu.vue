@@ -1,5 +1,23 @@
 <template>
   <div class="container-fluid">
+    <div class="search-date col-sm-12">
+      <div class="canlendar">
+        <p>Bạn cần đặt lịch hẹn vào thời gian nào?</p>
+
+      </div>
+      <div class="canlender">
+        <div class="calendar">
+          <input type="datetime-local" name="start_datetime" id="start_datetime" placeholder="Từ ngày" value="">
+          <input type="datetime-local" name="end_datetime" id="end_datetime" placeholder="Đến ngày" value="">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        
+
+      </div>
+
+
+
+    </div>
     <div class="anhdau ">
       <div class="content">
         <h1 class="indent">Đặt lịch hẹn</h1>
@@ -293,7 +311,7 @@
       <div class="lk">
         <div class="row">
           <div class="col-sm-6">
-            <h2 style="color: #f7c41c;" >Những lời khuyên trước và sau khi hiến máu</h2>
+            <h2 style="color: #f7c41c;">Những lời khuyên trước và sau khi hiến máu</h2>
             <div class="check">
               <div>
                 <h4 style="color: #00FF00;">
@@ -369,12 +387,16 @@
 </template>
 
 <script>
+
+
+
 export default {
+
 
 }
 </script>
 
-<style>
+<style scoped>
 /* Thẻ div đầu  */
 
 .anhdau {
@@ -589,7 +611,7 @@ export default {
 .col-sm-6 .ban,
 .col-sm-6 .exc {
   padding: 20px;
-  
+
 }
 
 .check,
@@ -598,5 +620,21 @@ export default {
   margin: 10px;
   background-color: #ffffff;
   border-radius: 10px;
+}
+
+.search-date {
+  color: #ffffff;
+  font-weight: 300px;
+
+  background-color: #0074e4;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+input {
+  width: 400px;
+  margin: 10px;
+
+
 }
 </style>
