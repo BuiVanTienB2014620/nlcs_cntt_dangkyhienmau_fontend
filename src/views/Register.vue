@@ -1,9 +1,6 @@
 <template>
-  
-  <FormRegister @submit:user="createUser"/>
- 
-
-
+  <FormRegister  @submit:user="createUser" />
+  <p>{{ message }}</p>
 </template>
 
 <script>
@@ -11,40 +8,48 @@ import UserService from "@/services/user.service.js";
 import FormRegister from "../components/FormRegister.vue";
 
 export default {
-components: {
-  FormRegister,
-},
+  components: {
+    FormRegister,
+  },
 
-props: {
-  user: { type: Object, require: true },
+  props: {
+    user: { type: Object, required: true },
 
-},
-
-
-data() {
-  return {
-
-    message: "",
+  },
 
 
-  };
+  data() {
+    return {
 
-},
 
-async createUser(data) {
-  // Hiển thị cửa sổ xác nhận
+      message: "",
+    };
 
-  const confirmed = window.confirm("Bạn có tài khoản hệ mới?");
+  },
+  methods: {
+    async createUser(data) {
+      // Hiển thị cửa sổ xác nhận
+      console.log("hello",data);
 
-  if (confirmed) {
-    try {
-      await UserService.createUser(this.user, data);
-      this.message = "Thêm tài khoản mới thành công";
-    } catch (error) {
-      console.log(error);
-    }
-  }
-},
+
+      const confirmed = window.confirm("Bạn có tài khoản hệ mới?");
+
+      if (confirmed) {
+        try {
+          await UserService.create(data);
+          this.message = "Thêm tài khoản mới thành công";
+          this.$router.push({ name: 'login' });
+
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    },
+
+  },
+
+
+
 };
 
 
@@ -59,5 +64,4 @@ async createUser(data) {
 
 
 <style scoped>
-
 </style>

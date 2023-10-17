@@ -9,11 +9,11 @@
             </router-link>
 
         </a>
-        <div class="logo-container">
+        <div class="logo-container" :style="logoContainerStyles">
             <img src="../assets/img/logo1.jpg" alt="" class="logo1">
             <img src="../assets/img/HCTD.png" alt="" class="logo">
         </div>
-        <div class="navbar-user">
+        <div class="navbar-user" v-if="isLoggedIn">
             <router-link :to="{ name: 'login' }" class="login">
                 <i class="fa-solid fa-user"></i> Đăng Nhập
 
@@ -24,21 +24,55 @@
     </nav>
     <div>
         <nav class="navbar navi">
-        <div class="nav-item" style="margin-right: 16px; color: white;margin-left: auto;">
-            <router-link :to="{ name: 'hienmau' }" class="nav-link" style="color: #ffffff;">
+            <div class="nav-item" style="margin-right: 16px; color: white;margin-left: auto;">
+                <router-link :to="{ name: 'hienmau' }" class="nav-link" style="color: #ffffff;">
 
-                Trang Chủ
+                    Trang Chủ
 
-            </router-link>
+                </router-link>
 
-        </div>
-        <div class="nav-item" style="margin-right: 16px; color: white; ">Hỏi Đáp</div>
-        <div :class="'nav-item'" style="color: white;margin-right: auto;">Tin Tức</div>
-    </nav>
+            </div>
+            <div class="nav-item" style="margin-right: 16px; color: white; ">Hỏi Đáp</div>
+            <div :class="'nav-item'" style="color: white;margin-right: auto;">Tin Tức</div>
+        </nav>
 
     </div>
- 
 </template>
+<script>
+export default {
+    data() {
+        return {
+            isLoggedIn: false,
+        };
+    },
+    computed: {
+        logoContainerStyles() {
+            if (this.isLoggedIn) {
+                // Trang đăng nhập hoặc đăng ký
+                return {
+                    marginRight: '25%',
+                   
+                };
+            } else {
+                // Trang chủ hoặc các trang khác
+                return {
+                    marginRight: '35.4%',
+                    
+                }; // Trả về một đối tượng rỗng để không có margin-right
+            }
+        },
+    },
+    watch: {
+        '$route.name'(newRoute, oldRoute) {
+            if (newRoute === 'login' || newRoute === 'user.register') {
+                this.isLoggedIn = false;
+            } else {
+                this.isLoggedIn = true;
+            }
+        },
+    },
+};
+</script>
 <style scoped>
 /* CSS để bo tròn ảnh và thu nhỏ nó */
 .navbar {
