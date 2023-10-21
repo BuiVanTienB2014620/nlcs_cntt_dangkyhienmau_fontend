@@ -1,5 +1,6 @@
 <template>
-    <nav class="navbar navbar-expand navbar-dark bg-white">
+    <div>
+        <nav class="navbar navbar-expand navbar-dark bg-white">
         <a href="" class="navbar-brand">
             <router-link :to="{ name: 'hienmau' }" class="nav-link">
 
@@ -13,7 +14,7 @@
             <img src="../assets/img/logo1.jpg" alt="" class="logo1">
             <img src="../assets/img/HCTD.png" alt="" class="logo">
         </div>
-        <div class="navbar-user" v-if="isLoggedIn">
+        <div class="navbar-user" v-if="isLoggedIn" @click="loginUser()">
             <router-link :to="{ name: 'login' }" class="login">
                 <i class="fa-solid fa-user"></i> Đăng Nhập
 
@@ -37,8 +38,14 @@
         </nav>
 
     </div>
+
+
+    </div>
+    
 </template>
 <script>
+
+
 export default {
     data() {
         return {
@@ -71,6 +78,13 @@ export default {
             }
         },
     },
+
+    methods: {
+        loginUser(){
+           
+                this.$router.push({name: "login"});
+        }
+    }
 };
 </script>
 <style scoped>

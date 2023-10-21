@@ -32,8 +32,14 @@
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form3Example4cg">Mật khẩu</label>
-                                        <Field type="password" id="form3Example4cg" class="form-control form-control-lg"
-                                            name="password" v-model="userLocal.password" />
+                                        <Field :type="showPassword ? 'text' : 'password'" id="form3Example4cg"
+                                            class="form-control form-control-lg" name="password"
+                                            v-model="userLocal.password" />
+
+                                        <i class="far fa-eye" @click="showPassword = !showPassword"
+                                            style="cursor: pointer;position: relative; left: 450px; bottom: 35px;">
+                                        </i>
+
                                         <ErrorMessage name="password" class="error-feedback"
                                             style="color: rgb(238, 15, 15);" />
 
@@ -42,23 +48,19 @@
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form3Example4cdg">Nhập lại mật khẩu</label>
-                                        <Field type="password" id="form3Example4cdg" class="form-control form-control-lg"
-                                            name="respassword" v-model="userLocal.respassword" />
+                                        <Field :type="showPassword ? 'text' : 'password'" id="form3Example4cdg"
+                                            class="form-control form-control-lg" name="respassword"
+                                            v-model="userLocal.respassword" />
+                                        <i class="far fa-eye" @click="showPassword = !showPassword"
+                                            style="cursor: pointer;position: relative;left: 450px; bottom: 35px; ">
+                                        </i>
                                         <ErrorMessage name="respassword" class="error-feedback"
                                             style="color: rgb(238, 15, 15);" />
 
 
                                     </div>
 
-                                    <div class="form-check d-flex justify-content-center mb-5">
-                                        <Input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg"
-                                            style="margin-right: 426px; margin-top: 7px;" />
-                                        <label class="form-check-label" for="form2Example3g">
-                                            Tôi đồng ý tất cả các tuyên bố trong <a href="#!" class="text-body"><u>Điều
-                                                    khoản của
-                                                    dịch vụ</u></a>
-                                        </label>
-                                    </div>
+
 
                                     <div class="d-flex justify-content-center">
                                         <button type="submit"
@@ -66,7 +68,7 @@
 
                                             Đăng
                                             ký
-                                          
+
                                         </button>
                                     </div>
 
@@ -123,8 +125,10 @@ export default {
                 .string()
                 .required("Mật khẩu phải có giá trị.")
                 .min(8, "Tên phải ít nhất 8 ký tự.")
-                .max(8, "Tên có nhiều nhất 8 ký tự."),
-
+                .max(8, "Tên có nhiều nhất 8 ký tự.")
+                .test("password-match", "Mật khẩu không khớp.", function (value) {
+                return value === this.parent.password;
+            }),
 
         });
         return {
@@ -136,6 +140,7 @@ export default {
                 // Initialize as a boolean value
             },
             userFormSchema,
+            showPassword: false,
         };
 
     },
@@ -145,6 +150,7 @@ export default {
 
             this.$emit("submit:user", this.userLocal);
         }
+        
     },
 
 };

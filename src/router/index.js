@@ -9,7 +9,7 @@ const routes = [
         component: Trangchu,
     },
     {
-        path: "/login",
+        path: "/loginuser",
         name: "login",
         component:()=> import("@/views/Login.vue"),
 
