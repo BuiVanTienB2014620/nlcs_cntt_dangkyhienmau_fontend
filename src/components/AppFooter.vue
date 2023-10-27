@@ -91,6 +91,14 @@ Thiết kế website VIỆN HUYẾT HỌC - TRUYỀN MÁU TRUNG ƯƠNG bởi B20
 </template>
 
 <style scoped>
+
+section {
+  padding: 10px;
+
+
+  background-color: #302d2d;
+  color: #ffff;
+}
 .dvtv {
   display: flex; /* Use Flexbox to align images in a row */
   justify-content: space-between; /* Distribute space evenly between the images */

@@ -33,7 +33,7 @@ export default {
                 try {
                     await UserService.login(data);
                     this.message = "Đăng nhập thành công";
-                    this.$router.push({ name: 'hienmau' });
+                    this.$router.push({ name: 'auth' });
 
                 } catch (error) {
                     this.message = "Đăng nhập thất bại, mật khẩu hoặc email chưa chính xác";
@@ -52,7 +52,7 @@ export default {
 
 .lg > p{
     margin-bottom: 28px;
-    color: brown;
+    color: rgb(249, 4, 4);
 }
 
 </style>

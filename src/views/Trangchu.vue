@@ -1,23 +1,6 @@
 <template>
   <div class="container-fluid">
-    <div class="search-date col-sm-12">
-      <div class="canlendar">
-        <p>Bạn cần đặt lịch hẹn vào thời gian nào?</p>
-
-      </div>
-      <div class="canlender">
-        <div class="calendar">
-          <input type="datetime-local" name="start_datetime" id="start_datetime" placeholder="Từ ngày" value="">
-          <input type="datetime-local" name="end_datetime" id="end_datetime" placeholder="Đến ngày" value="">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-        
-
-      </div>
-
-
-
-    </div>
+   
     <div class="anhdau ">
       <div class="content">
         <h1 class="indent">Đặt lịch hẹn</h1>
@@ -391,6 +374,7 @@
 
 
 export default {
+
 
 
 }

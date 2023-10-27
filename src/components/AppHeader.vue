@@ -1,47 +1,46 @@
 <template>
     <div>
         <nav class="navbar navbar-expand navbar-dark bg-white">
-        <a href="" class="navbar-brand">
-            <router-link :to="{ name: 'hienmau' }" class="nav-link">
+            <a href="" class="navbar-brand">
+                <router-link :to="{ name: 'hienmau' }" class="nav-link">
 
-                <img src="../assets/img/download.png" alt="" class="rounded-circle logo-img">
-                <span class="logo-text text-dark">Hội Hiến Máu Việt Nam</span>
+                    <img src="../assets/img/download.png" alt="" class="rounded-circle logo-img">
+                    <span class="logo-text text-dark">Hội Hiến Máu Việt Nam</span>
 
-            </router-link>
+                </router-link>
 
-        </a>
-        <div class="logo-container" :style="logoContainerStyles">
-            <img src="../assets/img/logo1.jpg" alt="" class="logo1">
-            <img src="../assets/img/HCTD.png" alt="" class="logo">
-        </div>
-        <div class="navbar-user" v-if="isLoggedIn" @click="loginUser()">
-            <router-link :to="{ name: 'login' }" class="login">
-                <i class="fa-solid fa-user"></i> Đăng Nhập
-
-            </router-link>
-
-        </div>
-
-    </nav>
-    <div>
-        <nav class="navbar navi">
-            <div class="nav-item" style="margin-right: 16px; color: white;margin-left: auto;">
-                <router-link :to="{ name: 'hienmau' }" class="nav-link" style="color: #ffffff;">
-
-                    Trang Chủ
+            </a>
+            <div class="logo-container" :style="logoContainerStyles">
+                <img src="../assets/img/logo1.jpg" alt="" class="logo1">
+                <img src="../assets/img/HCTD.png" alt="" class="logo">
+            </div>
+            <div class="navbar-user" v-if="isLoggedIn" @click="loginUser()">
+                <router-link :to="{ name: 'login' }" class="login">
+                    <i class="fa-solid fa-user"></i> Đăng Nhập
 
                 </router-link>
 
             </div>
-            <div class="nav-item" style="margin-right: 16px; color: white; ">Hỏi Đáp</div>
-            <div :class="'nav-item'" style="color: white;margin-right: auto;">Tin Tức</div>
+
         </nav>
+        <div>
+            <nav class="navbar navi">
+                <div class="nav-item" style="margin-right: 16px; color: white;margin-left: auto;">
+                    <router-link :to="{ name: 'hienmau' }" class="nav-link" style="color: #ffffff;">
+
+                        Trang Chủ
+
+                    </router-link>
+
+                </div>
+                <div class="nav-item" style="margin-right: 16px; color: white; ">Hỏi Đáp</div>
+                <div :class="'nav-item'" style="color: white;margin-right: auto;">Tin Tức</div>
+            </nav>
+
+        </div>
+
 
     </div>
-
-
-    </div>
-    
 </template>
 <script>
 
@@ -49,7 +48,7 @@
 export default {
     data() {
         return {
-            isLoggedIn: false,
+            isLoggedIn: true,
         };
     },
     computed: {
@@ -58,31 +57,33 @@ export default {
                 // Trang đăng nhập hoặc đăng ký
                 return {
                     marginRight: '25%',
-                   
+
                 };
             } else {
                 // Trang chủ hoặc các trang khác
                 return {
                     marginRight: '35.4%',
-                    
+
                 }; // Trả về một đối tượng rỗng để không có margin-right
             }
         },
     },
     watch: {
         '$route.name'(newRoute, oldRoute) {
-            if (newRoute === 'login' || newRoute === 'user.register') {
-                this.isLoggedIn = false;
-            } else {
+            
+            if (newRoute === 'hienmau' ) {
                 this.isLoggedIn = true;
+            } else {
+                this.isLoggedIn = false;
             }
         },
     },
 
+
     methods: {
-        loginUser(){
-           
-                this.$router.push({name: "login"});
+        loginUser() {
+
+            this.$router.push({ name: "login" });
         }
     }
 };
