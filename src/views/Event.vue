@@ -128,8 +128,10 @@
                                 <p>
                                     50/145 người
                                 </p>
-                                <button type="button" class="btn btn-primary" style=" width: 65px;
-    height: 55px;">Đăng ký</button>
+                                <router-link :to="{ name: 'welcome' }"> <button type="button" class="btn btn-primary"
+                                        style=" width: 65px;
+    height: 55px;">Đăng ký</button></router-link>
+
 
                             </th>
 

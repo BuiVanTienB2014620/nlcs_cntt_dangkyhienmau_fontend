@@ -22,6 +22,24 @@
 
             </div>
 
+            <div class="dropdown" v-if="usLoggedIn">
+                <button class="btn btn-secondary " type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img src="@/assets/img/chitonngoc.jpg" class="rounded-circle" height="55" width="60" alt="User"
+                        loading="lazy" />
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <router-link class="dropdown-item" to="/">
+                        <button type="button" class="btn btn-success">
+                            Đăng xuất
+
+                        </button>
+                      
+                    </router-link>
+                   
+                    <AModal :visible="AModalVisible" variant="success" ></AModal>
+                </div>
+            </div>
         </nav>
         <div>
             <nav class="navbar navi">
@@ -43,23 +61,39 @@
     </div>
 </template>
 <script>
+import AModal from "./AModal.vue";
 
 
 export default {
+    components:{
+        AModal,
+
+    },
     data() {
         return {
             isLoggedIn: true,
+            usLoggedIn: false,
+            AModalVisible: false,
         };
+       
     },
     computed: {
         logoContainerStyles() {
             if (this.isLoggedIn) {
                 // Trang đăng nhập hoặc đăng ký
                 return {
-                    marginRight: '25%',
+                    marginRight: '20%',
 
                 };
-            } else {
+            } else if(this.usLoggedIn){
+                 // Trang đăng nhập hoặc đăng ký
+                 return {
+                    marginRight: '23%',
+
+                };
+
+            }
+             else {
                 // Trang chủ hoặc các trang khác
                 return {
                     marginRight: '35.4%',
@@ -70,13 +104,20 @@ export default {
     },
     watch: {
         '$route.name'(newRoute, oldRoute) {
-            
-            if (newRoute === 'hienmau' ) {
+
+            if (newRoute === 'hienmau') {
                 this.isLoggedIn = true;
-            } else {
+                this.usLoggedIn = false;
+
+            }else if(newRoute === 'auth'){
+                this.usLoggedIn = true;
+
+            }
+             else {
                 this.isLoggedIn = false;
             }
         },
+        
     },
 
 
@@ -84,7 +125,10 @@ export default {
         loginUser() {
 
             this.$router.push({ name: "login" });
-        }
+        },
+        openModal() {
+            this.AsModalVisible = true;
+        },
     }
 };
 </script>
@@ -197,5 +241,9 @@ export default {
     text-decoration: none;
     color: black;
 
+}
+
+.dropdown-menu {
+    margin-left: -70px;
 }
 </style>

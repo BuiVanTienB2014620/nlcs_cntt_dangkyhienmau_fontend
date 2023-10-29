@@ -7,6 +7,7 @@ const routes = [
     path: "/",
    
     component: () => import("@/layouts/Base.vue"),
+   
     children: [
       
       {
@@ -37,6 +38,36 @@ const routes = [
         name: "events",
         component: () => import("@/views/Event.vue"),
       },
+      {
+        path: "/resblood",
+        name: "resblood",
+        component: () => import("@/views/ReBlood.vue"),
+        children: [
+          {
+            path: "",
+            name: "welcome",
+            component: () => import("@/views/reblood/welcome.vue"),
+          },
+          
+          {
+            path: "tap",
+            name: "tap",
+            component: () => import("@/views/reblood/tap.vue"),
+          },
+          {
+            path: "medical",
+            name: "medical",
+            component: () => import("@/views/reblood/medical.vue"),
+          },
+          {
+            path: "infor",
+            name: "infor",
+            component: () => import("@/views/reblood/infor.vue"),
+          },
+
+        ],
+      },
+    
     
       {
         path: "/:pathMatch(.*)*",
@@ -49,6 +80,7 @@ const routes = [
   },
   {
     path: "/admin",
+    name: "admin",
     component: () => import("@/layouts/Admin.vue"),
     children: [
       {

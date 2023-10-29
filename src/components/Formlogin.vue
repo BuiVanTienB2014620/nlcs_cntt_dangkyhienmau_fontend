@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="pt-1 mb-4">
-                                <button class="btn btn-info btn-lg btn-block" type="submit">Đăng nhập</button>
+                                <button class="btn btn-info btn-lg btn-block" type="submit" style="color: #ffff;">Đăng nhập</button>
                             </div>
 
                             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Quên mật khẩu?</a></p>

@@ -62,9 +62,9 @@
 
 
 
-                                    <div class="d-flex justify-content-center">
+                                    <div class="d-flex justify-content-center" >
                                         <button type="submit"
-                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 ">
 
                                             Đăng
                                             ký
@@ -165,6 +165,7 @@ export default {
     
 <style scoped>
 .gradient-custom-4 {
+    color: #ffff;
     /* fallback for old browsers */
     background: #d81811;
 

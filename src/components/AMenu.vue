@@ -24,7 +24,7 @@
             <tbody>
                 <tr>
                     <td>
-                        
+
 
 
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-hexagon" width="24"
@@ -77,7 +77,7 @@
                             <path d="M12 14l0 3"></path>
                             <path d="M16 14l0 3"></path>
                         </svg>
-                     
+
                         <router-link :to="{ name: 'admin-position' }" style="text-decoration: none; class " class="textp">
                             Trụ sở hiến máu
 
@@ -106,6 +106,20 @@
 
             </tbody>
         </table>
+        <div class="button">
+            <router-link 
+            :to="{name: 'hienmau'}"
+            >
+            <button>
+                Đăng xuất
+            </button>
+
+        </router-link>
+
+           
+        </div>
+
+
 
     </div>
 </template>
@@ -117,6 +131,7 @@ export default {
 </script>
 
 <style scoped>
+
 /* Style the <tr> elements when hovered */
 .table tbody tr:hover {
     background-color: #f2f2f2;
@@ -161,6 +176,19 @@ export default {
     height: 1px;
     background-color: rgb(12, 113, 61);
     /* Change to the desired line color */
+}
+
+.button{
+    margin-top: 30px;
+    margin-left: 60px;
+  
+    
+}
+button{
+    color: #f2f2f2;
+    background-color: rgb(12, 113, 61);
+    border-radius: 5px;
+
 }
 </style>
 
