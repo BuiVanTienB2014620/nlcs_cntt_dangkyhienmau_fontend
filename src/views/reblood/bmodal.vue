@@ -4,49 +4,47 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Chỉnh sửa thông tin</h5>
+                        <h5 class="modal-title"></h5>
 
-                        <button type="button" class="close" @click="OpencloseFun()" aria-label="Close">
+                        <button type="button" class="btn btn-danger" @click="OpencloseFun()" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
 
                         <slot>
-                            <table class="table align-middle mb-0 bg-white">
-                                <thead class="bg-light">
-                                    <tr>
-                                        <th class="tht">Tên</th>
-                                        <th class="tht">Giới tính</th>
-                                        <th class="tht">Địa Điểm</th>
-                                        <th class="tht">Thời gian</th>
-                                        <th class="s">Nhóm máu</th>
-
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <p>Bùi Văn Tiền</p>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <p>Nam</p>
-                                        </td>
-                                        <td>
-                                            <p>106 Thiên Phước, Phường 9, Quận Tân Bình, TP.HCM</p>
-                                        </td>
-                                        <td>
-                                            <p>7:00 AM</p>
-                                        </td>
-                                        <td>
-                                            <p>A</p>
-                                        </td>
-
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="profile-form">
+                                <h4 style="color: #333;">Thay đổi thông tin đăng ký</h4>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="name">Tên:</label>
+                                        <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Giới tính:</label>
+                                        <select id="gender" name="gender">
+                                            <option value="male">Nam</option>
+                                            <option value="female">Nữ</option>
+                                            <option value="other">Khác</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">Địa điểm:</label>
+                                        <input type="text" id="location" name="location"
+                                            placeholder="Nhập địa điểm của bạn" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="birthday">Ngày sinh:</label>
+                                        <input type="date" id="birthday" name="birthday" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="blood-group">Nhóm máu:</label>
+                                        <input type="text" id="blood-group" name="blood-group"
+                                            placeholder="Nhập nhóm máu của bạn" />
+                                    </div>
+                                    <button type="submit">Lưu thông tin</button>
+                                </form>
+                            </div>
 
 
                         </slot>
@@ -128,4 +126,39 @@ td:nth-child(1) {
     display: flex;
     align-items: center;
 }
+.profile-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 </style>

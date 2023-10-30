@@ -31,8 +31,10 @@ export default {
 .page {
       max-width: 400px;
       margin: auto;
+     
 }
 .container{
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 </style>

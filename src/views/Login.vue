@@ -51,7 +51,7 @@ export default {
                 if (data.email === "admin@gmail.com" && data.password === "admin123") {
                     // Nếu email và mật khẩu là admin, định hướng đến trang admin
                     this.message = "Đăng nhập thành công vào trang admin";
-                    this.$router.push({ name: 'admin' });
+                    this.$router.push({ name: 'awelcome' });
                 } else {
                     this.message = "Đăng nhập thành công ";
                     this.$router.push({ name: 'auth' });

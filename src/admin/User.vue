@@ -23,7 +23,7 @@
                     </td>
                    
                     <td>
-                        <span class="badge badge-success rounded-pill d-inline">Hoạt động</span>
+                        <span class="btn btn-success">Active</span>
                     </td>
                    
                 </tr>
@@ -40,7 +40,7 @@
                     </td>
                     
                     <td>
-                        <span class="badge badge-primary rounded-pill d-inline">Đang đăng nhập</span>
+                        <span class="btn btn-warning">Đang đăng nhập</span>
                     </td>
                     
                 </tr>
@@ -57,7 +57,7 @@
                     </td>
                    
                     <td>
-                        <span class="badge badge-warning rounded-pill d-inline">Thoát</span>
+                        <span class="btn btn-danger">Thoát</span>
                     </td>
                     
                 </tr>

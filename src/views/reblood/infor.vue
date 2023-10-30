@@ -31,7 +31,7 @@
                         <p>A</p>
                     </td>
                     <td>
-                        <bmodal :visible="isModalVisible" variant="success"></bmodal>
+                        <bmodal :visible="isModalVisible" variant="secondary"></bmodal>
                     </td>
                 </tr>
             </tbody>

@@ -84,6 +84,11 @@ const routes = [
     component: () => import("@/layouts/Admin.vue"),
     children: [
       {
+        path: "",
+        name: "awelcome",
+        component: () => import("@/admin/AWelcome.vue"),
+      },
+      {
         path: "user",
         name: "admin-user",
         component: () => import("@/admin/User.vue"),
@@ -99,6 +104,16 @@ const routes = [
         path: "position",
         name: "admin-position",
         component: () => import("@/admin/Position.vue"),
+      },
+      {
+        path: "addposition",
+        name: "addposition",
+        component: () => import("@/admin/position/addposition.vue"),
+      },
+      {
+        path: "editposition",
+        name: "editposition",
+        component: () => import("@/admin/position/editposition.vue"),
       },
     ],
   },

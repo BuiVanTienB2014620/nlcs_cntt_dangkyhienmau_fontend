@@ -30,14 +30,14 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <router-link class="dropdown-item" to="/">
-                        <button type="button" class="btn btn-success">
+                        <button type="button" class="btn btn-success" >
                             Đăng xuất
 
                         </button>
                       
                     </router-link>
                    
-                    <AModal :visible="AModalVisible" variant="success" ></AModal>
+                    <AModal :visible="AModalVisible" variant="success" @click.stop></AModal>
                 </div>
             </div>
         </nav>
@@ -127,7 +127,7 @@ export default {
             this.$router.push({ name: "login" });
         },
         openModal() {
-            this.AsModalVisible = true;
+            this.AModalVisible = false;
         },
     }
 };

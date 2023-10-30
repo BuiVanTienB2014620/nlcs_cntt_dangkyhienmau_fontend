@@ -1,7 +1,7 @@
 <template>
     <div>
-        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i class="fas fa-plus fa-2x"
-                    aria-hidden="true"></i></a></span>
+        <span class="table-add float-right mb-3 mr-2"><router-link :to="{ name: 'addposition' }" class="text-success"><i
+                    class="fas fa-plus fa-2x" aria-hidden="true"></i></router-link></span>
         <table class="table align-middle mb-0 bg-white">
             <thead class="bg-light">
                 <tr>
@@ -48,20 +48,26 @@
 
                     </td>
                     <td>
-                        <span class="badge badge-success rounded-pill d-inline">7:00 AM</span>
+                        <p>7:00 AM</p>
                     </td>
                     <td>100</td>
                     <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
-                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                                <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
-                                <path d="M16 5l3 3"></path>
-                            </svg>
-                        </button>
+                        <router-link :to="{ name: 'editposition' }">
+                            <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24"
+                                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                                    <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                                    <path d="M16 5l3 3"></path>
+                                </svg>
+                            </button>
+
+
+
+                        </router-link>
+
                     </td>
                     <td>
                         <button type="button" class="btn btn-link btn-sm btn-rounded">
@@ -83,7 +89,7 @@
                     <td>
                         <div class="d-flex align-items-center">
                             <img src="https://static.giotmauvang.org.vn/ihpstatic/LOGO/CR.png" class="rounded-circle" alt=""
-                                style="width: 45px; height: 45px;margin-right:18px"  />
+                                style="width: 45px; height: 45px;margin-right:18px" />
                             <div class="ms-3">
                                 <p class="fw-bold mb-1">Hiến máu - Trung tâm Truyền máu Chợ Rẫy</p>
                                 <span style="font-size: 10px;">
@@ -112,7 +118,7 @@
                         <p class="fw-normal mb-1">24-12-2023</p>
                     </td>
                     <td>
-                        <span class="badge badge-success rounded-pill d-inline">7:00 AM</span>
+                        <p>7:</p>
                     </td>
                     <td>100</td>
                     <td>
@@ -176,7 +182,7 @@
                         <p class="fw-normal mb-1">24-12-2023</p>
                     </td>
                     <td>
-                        <span class="badge badge-success rounded-pill d-inline">7:00 AM</span>
+                        <p>7:</p>
                     </td>
                     <td>100</td>
                     <td>
@@ -218,8 +224,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-
-
-</style>
+<style scoped></style>
